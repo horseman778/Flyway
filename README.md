@@ -1,6 +1,6 @@
 # Flyway: The Great Count
 
-![Flyway: The Great Count, the reveal screen with double-counted birds ringed and the rare spoonbill circled](cover.jpg)
+![Flyway: The Great Count, an illustrated field-journal marsh with herons, an avocet, a tern, the rare spoonbill and two shared strips marked seen by two](flyway_cover_image.jpg)
 
 **Play now:** https://flyway-y5or.onrender.com/ (enter a name and tap **Practice** to play alone with two bot observers)
 

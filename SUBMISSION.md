@@ -14,9 +14,9 @@ Flyway: The Great Count
 
 ## b. Project cover image
 
-![Flyway cover](cover.jpg)
+![Flyway cover](flyway_cover_image.jpg)
 
-Upload `cover.jpg` from this folder (1600×900, the reveal screen with a title band). The same image is in `../covers/flyway-cover.jpg`.
+Upload `flyway_cover_image.jpg` from this folder: an illustrated field-journal cover with the marsh birds, shared strips, the spoonbill, life list, badges and a title band.
 
 ## c. Project description
 
