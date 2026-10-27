@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f1ead7">
+<meta name="description" content="A cooperative bird-counting game for 2 to 8 observers. Every observer sees a piece of the marsh; together you count it without counting any bird twice.">
+<title>Flyway: The Great Count</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23f1ead7'/%3E%3Cpath d='M4 22 Q14 10 20 20 Q26 10 36 22 Q26 16 20 24 Q14 16 4 22Z' fill='%232b3640'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="b-Heron" viewBox="0 0 40 40"><ellipse cx="15" cy="22" rx="8.5" ry="4.6" transform="rotate(-25 15 22)"/><path d="M20.5 18.5C25 14 19.5 10.5 23.5 6.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="24.5" cy="6.2" r="2.4"/><path d="M26.4 5.2L36.5 7.3L26.4 7.6Z"/><path d="M13.5 25L12.5 37.5M16.5 25L17.8 37.5" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M7.5 25.5L3.5 28.5L8.5 27.5Z"/></symbol>
+    <symbol id="b-Egret" viewBox="0 0 40 40"><ellipse cx="15.5" cy="25" rx="7.5" ry="4.2" transform="rotate(-20 15.5 25)"/><path d="M20.5 22C24 19 20.5 16.5 23 13.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="23.8" cy="13.3" r="2.3"/><path d="M25.8 12.6L32.5 14L25.8 14.6Z"/><path d="M22.5 12C17 8.5 13 10 10 13" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M14 28L13.6 36.5M17 28L17.8 36.5" stroke="currentColor" stroke-width="1.6" fill="none"/></symbol>
+    <symbol id="b-Avocet" viewBox="0 0 40 40"><ellipse cx="15" cy="23" rx="9.5" ry="4.2"/><path d="M22.5 21Q26 18.5 26 15" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><circle cx="26.5" cy="13.8" r="2.5"/><path d="M28.6 13.6Q34.5 15 38 8.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M13 26.5L12 37M17.5 26.5L18.8 37" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M6 22.5L2 21.5L5.5 24.5Z"/></symbol>
+    <symbol id="b-Dunlin" viewBox="0 0 40 40"><ellipse cx="16.5" cy="25" rx="8.5" ry="5.6"/><circle cx="25" cy="19.5" r="3.4"/><path d="M28 20.4L35.5 23.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M14.5 30.2L13.8 35.8M18.6 30.2L19.4 35.8" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M8.5 24L4 23L7.5 26.5Z"/></symbol>
+    <symbol id="b-Tern" viewBox="0 0 40 40"><ellipse cx="20.5" cy="21" rx="9" ry="2.7"/><path d="M15 20.5Q20 11 10.5 4.5Q23.5 9.5 25 19.5Z"/><path d="M16 22Q19 28 13.5 34Q22.5 29 24.5 22.5Z" opacity=".75"/><path d="M12.5 21L2.5 16.5L8.5 21L2.5 25.5Z"/><circle cx="29.6" cy="20.5" r="2.5"/><path d="M31.8 19.6L38.5 20.8L31.8 21.8Z"/></symbol>
+    <symbol id="b-Spoonbill" viewBox="0 0 40 40"><ellipse cx="14.5" cy="22.5" rx="8.8" ry="4.7" transform="rotate(-10 14.5 22.5)"/><path d="M21 19.5Q24.5 16 25 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="25.6" cy="11" r="2.5"/><path d="M27.8 11.2L33.5 12.2" stroke="currentColor" stroke-width="1.8" fill="none"/><ellipse cx="35.4" cy="12.6" rx="2.8" ry="2"/><path d="M13 26.5L12.4 37M16.4 26.5L17.2 37" stroke="currentColor" stroke-width="1.6" fill="none"/></symbol>
+    <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="2" height="6" fill="#b5532e" opacity=".28"/></pattern>
+  </defs>
+</svg>
+<div class="offline-banner" role="status">SIGNAL LOST IN THE REEDS · RECONNECTING…</div>
+<header class="top">
+  <a class="mark" href="/" aria-label="Flyway home"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#b-Tern"/></svg></a>
+  <div class="brand">FLYWAY <i>The Great Count</i><small>COASTAL MARSH OBSERVATORY · FIELD JOURNAL</small></div>
+  <div class="top-tools">
+    <span class="top-chip" data-fx-chip title="Your field rank"></span>
+    <button id="sound-toggle" class="round-btn" aria-pressed="true" aria-label="Sound on" title="Sound"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="spk" d="M4 9h4l5-4v14l-5-4H4z"/><path class="wave" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/><path class="mute" d="M16 9l6 6M22 9l-6 6"/></svg></button>
+    <button id="help-open" class="round-btn" aria-label="How to play" title="How to play">?</button>
+  </div>
+</header>
+
+<main>
+  <section id="landing" class="landing">
+    <div class="landing-grid">
+      <div class="landing-copy">
+        <div class="eyebrow">DAWN COUNT · ESTUARY 04 · 2–8 OBSERVERS</div>
+        <h1>Flyway: <em>The Great Count</em></h1>
+        <p class="intro">Every observer sees a piece. Together, you see the marsh.</p>
+        <p class="sub">Count herons, avocets and terns without counting any bird twice, and find the one rare spoonbill hiding in the reeds.</p>
+        <div class="field-guide"><div id="lifelist" class="lifelist" aria-label="Your life list"></div><div id="rankcard" class="fx-card rankcard" aria-label="Your field rank"></div></div>
+      </div>
+      <form id="landing-form" class="index-card" autocomplete="off">
+        <div class="tape" aria-hidden="true"></div>
+        <label for="name">Observer name</label>
+        <input id="name" maxlength="14" placeholder="e.g. Oliver" autocomplete="nickname" spellcheck="false">
+        <label for="code">Count code</label>
+        <div class="joinrow"><input id="code" aria-describedby="code-hint" maxlength="4" placeholder="KFRT" autocapitalize="characters" spellcheck="false"><button id="join" class="btn estuary" type="submit">JOIN THE COUNT →</button></div>
+        <p class="code-hint" id="code-hint">Four letters from whoever started the count, like <b data-example-code>KFRT</b>. Starting your own game? Skip this.</p>
+        <div class="divider"><span>or start a new watch</span></div>
+        <button id="host" class="btn rust full" type="button">START A COUNT <small>HOST</small></button>
+        <button id="practice" class="btn paper full" type="button">PRACTICE <small>WITH 2 BOT OBSERVERS</small></button>
+        <p class="solo-hint">Playing alone? Tap <b>Practice</b> to count with two bot observers.</p>
+        <p id="error" class="error" role="alert"></p>
+      </form>
+    </div>
+  </section>
+  <section id="app" class="app hidden"></section>
+</main>
+
+<dialog id="tutorial" aria-labelledby="tut-title">
+  <button class="dialog-x" id="tut-close" aria-label="Close">×</button>
+  <div class="eyebrow">FIELD NOTE · <span id="tut-step">1 OF 3</span></div>
+  <div class="slides">
+    <article class="slide active">
+      <div class="slide-art" aria-hidden="true"><div class="mini-sector a">POST 1</div><div class="mini-sector b">POST 2</div><div class="mini-overlap">SHARED</div></div>
+      <h2 id="tut-title">You see a piece</h2>
+      <p>Each observer watches one sector of the marsh. Neighbouring sectors overlap: birds in the hatched strip appear in both views.</p>
+    </article>
+    <article class="slide">
+      <div class="slide-art tallies" aria-hidden="true"><span>Heron</span><span class="tally"><span class="tg five"><i></i><i></i><i></i><i></i><s></s></span><span class="tg"><i></i><i></i></span></span><span>in overlap</span><span class="tally"><span class="tg"><i></i></span></span></div>
+      <h2 id="tut-title-2">Tally, then share</h2>
+      <p>Count the target birds in your notebook, plus how many sit in the hatched strip. Share to the Team Sheet. Egrets and dunlins are decoys.</p>
+    </article>
+    <article class="slide">
+      <div class="slide-art" aria-hidden="true"><svg class="mini-bird"><use href="#b-Spoonbill"/></svg><div class="mini-cell">K4</div></div>
+      <h2 id="tut-title-3">The Lead files the count</h2>
+      <p>Example: you see 3 herons, your neighbour sees 2, and 1 of them sits in your shared strip. The true count is 3 + 2 − 1 = 4. The Lead files totals like this, plus the spoonbill's cell. Exact = 100 points per species.</p>
+    </article>
+  </div>
+  <div class="tut-nav"><button class="link-btn" id="tut-skip">Skip</button><div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div><button class="btn rust" id="tut-next">NEXT →</button></div>
+</dialog>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="announcer" class="sr-only" aria-live="polite"></div>
+<script src="/fx.js"></script>
+<script src="/client.js"></script>
+</body>
+</html>
