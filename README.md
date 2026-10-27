@@ -1,5 +1,9 @@
 # Flyway: The Great Count
 
+![Flyway: The Great Count, the reveal screen with double-counted birds ringed and the rare spoonbill circled](cover.jpg)
+
+**Play now:** https://flyway-y5or.onrender.com/ (enter a name and tap **Practice** to play alone with two bot observers)
+
 A cooperative bird-counting game for 2–8 observers. Each observer watches one sector of a dawn marsh. Neighbouring sectors overlap, so the same bird can appear in two notebooks. The team must report the true number of herons, avocets and terns without counting any bird twice, and find the one rare spoonbill.
 
 ## Run locally
@@ -34,3 +38,5 @@ Scoring per round: each species 100 − 25 per bird of error, +100 for the exact
 - Gamified layer (`fx.js`): a personal life list of the six species, field ranks from Novice Birder to Keeper of the Flyway, eight field badges, named round bumpers, birds landing one by one on the reveal, an exact-count streak and a shareable result card
 
 Rooms are held in memory and reset when the server restarts.
+
+Submission details (title, description, cover, link) are in [SUBMISSION.md](SUBMISSION.md).

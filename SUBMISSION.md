@@ -14,7 +14,9 @@ Flyway: The Great Count
 
 ## b. Project cover image
 
-`../covers/flyway-cover.jpg` (1600×900, with title band)
+![Flyway cover](cover.jpg)
+
+Upload `cover.jpg` from this folder (1600×900, the reveal screen with a title band). The same image is in `../covers/flyway-cover.jpg`.
 
 ## c. Project description
 
